@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
+
 import "./style.css";
 
 const WrappedButton = () => {
   const [text, setText] = useState("Button");
 
+  function changeInnerText() {
+    setText("New Button");
+  }
+
   return (
     <div className="wrapper" style={{ "margin": "5px" }}>
-      <button onClick={() => alert("Click")} className="btn">
+      <button onClick={changeInnerText} className="btn">
         {text}
       </button>
     </div>
   )
-
 }
+
 // class WrappedButton extends React.Component {
 //   state = {
 //     text: "Click me!",
